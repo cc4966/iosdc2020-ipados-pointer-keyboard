@@ -40,6 +40,22 @@ class FirstViewController: UIViewController {
             button31, button32, button33, button34, button35
         ]
     }
+    @IBOutlet private weak var smallButton0: UIButton!
+    @IBOutlet private weak var smallButton1: UIButton!
+    @IBOutlet private weak var smallButton2: UIButton!
+    @IBOutlet private weak var smallButton3: UIButton!
+    @IBOutlet private weak var smallButton4: UIButton!
+    @IBOutlet private weak var smallButton5: UIButton!
+    @IBOutlet private weak var smallButton6: UIButton!
+    @IBOutlet private weak var smallButton7: UIButton!
+    @IBOutlet private weak var smallButton8: UIButton!
+    @IBOutlet private weak var smallButton9: UIButton!
+    private var smallButtons: [UIButton] {
+        return [
+            smallButton0, smallButton1, smallButton2, smallButton3, smallButton4,
+            smallButton5, smallButton6, smallButton7, smallButton8, smallButton9
+        ]
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +106,28 @@ class FirstViewController: UIViewController {
         [button31, button32, button33, button34, button35].forEach { button in
             guard let button = button else { return }
             button.isPointerInteractionEnabled = true // pointerStyleProviderを設定するとtrueになる
+        }
+
+        guard let font = CTFontCreateUIFontForLanguage(.system, 36, nil) else {
+            return
+        }
+        let ascender = CTFontGetAscent(font)
+        smallButtons.forEach { button in
+            button.isPointerInteractionEnabled = true
+            guard let currentTitle = button.currentTitle, !currentTitle.isEmpty else {
+                return
+            }
+            // PostScript
+            let name = currentTitle == "2" ? "two" : currentTitle == "0" ? "zero" : currentTitle
+            button.pointerStyleProvider = { _, _, _ in
+                var glyph = CTFontGetGlyphWithName(font, name as CFString)
+                let advance = CTFontGetAdvancesForGlyphs(font, .horizontal, &glyph, nil, 1)
+                var transform = CGAffineTransform(scaleX: 1, y: -1).translatedBy(x: -CGFloat(advance) / 2, y: 18 - ascender)
+                guard let path = CTFontCreatePathForGlyph(font, glyph, &transform) else {
+                    return nil
+                }
+                return UIPointerStyle(shape: UIPointerShape.path(UIBezierPath(cgPath: path)))
+            }
         }
     }
 

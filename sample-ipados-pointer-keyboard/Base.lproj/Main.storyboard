@@ -198,73 +198,21 @@
                                     <action selector="changeButtonBackgroundWithDidTOuchUpInside:" destination="9pv-A4-QxB" eventType="touchUpInside" id="hH0-Zs-eue"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjS-Yr-tjU">
-                                <rect key="frame" x="517" y="695" width="160" height="16"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ej-Ht-mvc">
-                                        <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="16" id="Bnr-0I-dUX"/>
-                                        </constraints>
-                                        <state key="normal" title="i"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCS-MK-e5i">
-                                        <rect key="frame" x="16" y="0.0" width="16" height="16"/>
-                                        <state key="normal" title="O"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RuI-ea-Zgr">
-                                        <rect key="frame" x="32" y="0.0" width="16" height="16"/>
-                                        <state key="normal" title="S"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wp3-Lc-5M5">
-                                        <rect key="frame" x="48" y="0.0" width="16" height="16"/>
-                                        <state key="normal" title="D"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mh9-ao-PNb">
-                                        <rect key="frame" x="64" y="0.0" width="16" height="16"/>
-                                        <state key="normal" title="C"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wE-Io-LBX">
-                                        <rect key="frame" x="80" y="0.0" width="16" height="16"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJH-wK-jcp">
-                                        <rect key="frame" x="96" y="0.0" width="16" height="16"/>
-                                        <state key="normal" title="2"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G92-sz-BqY">
-                                        <rect key="frame" x="112" y="0.0" width="16" height="16"/>
-                                        <state key="normal" title="0"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLn-N2-TZx">
-                                        <rect key="frame" x="128" y="0.0" width="16" height="16"/>
-                                        <state key="normal" title="2"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2d6-A9-f3c">
-                                        <rect key="frame" x="144" y="0.0" width="16" height="16"/>
-                                        <state key="normal" title="0"/>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="4wE-Io-LBX" firstAttribute="width" secondItem="4ej-Ht-mvc" secondAttribute="width" id="5ik-Th-N06"/>
-                                    <constraint firstItem="Mh9-ao-PNb" firstAttribute="width" secondItem="4ej-Ht-mvc" secondAttribute="width" id="84P-rK-mXE"/>
-                                    <constraint firstItem="yJH-wK-jcp" firstAttribute="width" secondItem="4ej-Ht-mvc" secondAttribute="width" id="98Y-DI-9kG"/>
-                                    <constraint firstItem="tCS-MK-e5i" firstAttribute="width" secondItem="4ej-Ht-mvc" secondAttribute="width" id="9gP-Gj-di5"/>
-                                    <constraint firstItem="wp3-Lc-5M5" firstAttribute="width" secondItem="4ej-Ht-mvc" secondAttribute="width" id="Alm-rs-SdD"/>
-                                    <constraint firstItem="jLn-N2-TZx" firstAttribute="width" secondItem="4ej-Ht-mvc" secondAttribute="width" id="GsA-N4-nsP"/>
-                                    <constraint firstItem="G92-sz-BqY" firstAttribute="width" secondItem="4ej-Ht-mvc" secondAttribute="width" id="IeQ-9Q-PGS"/>
-                                    <constraint firstAttribute="height" constant="16" id="KmN-hA-geS"/>
-                                    <constraint firstItem="2d6-A9-f3c" firstAttribute="width" secondItem="4ej-Ht-mvc" secondAttribute="width" id="PFX-S4-l0M"/>
-                                    <constraint firstItem="RuI-ea-Zgr" firstAttribute="width" secondItem="4ej-Ht-mvc" secondAttribute="width" id="QAy-JF-tR1"/>
-                                </constraints>
-                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="iOSDC 2020" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="33f-sa-1XJ">
+                                <rect key="frame" x="492.5" y="695" width="209.5" height="59"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Ese-yy-QFL" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="74b-Jq-ZxG"/>
+                            <constraint firstItem="33f-sa-1XJ" firstAttribute="top" secondItem="D97-Xi-6u1" secondAttribute="bottom" constant="24" id="ETJ-Xo-rQq"/>
                             <constraint firstItem="D97-Xi-6u1" firstAttribute="top" secondItem="Ese-yy-QFL" secondAttribute="bottom" constant="24" id="FKj-Ez-GRH"/>
-                            <constraint firstItem="bjS-Yr-tjU" firstAttribute="top" secondItem="D97-Xi-6u1" secondAttribute="bottom" constant="24" id="MCi-9s-40D"/>
                             <constraint firstItem="D97-Xi-6u1" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="aff-KE-AZ1"/>
-                            <constraint firstItem="bjS-Yr-tjU" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="hPx-if-czV"/>
+                            <constraint firstItem="33f-sa-1XJ" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="qcK-1h-a8N"/>
                             <constraint firstItem="D97-Xi-6u1" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="tPq-kL-H8b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
@@ -286,6 +234,7 @@
                         <outlet property="button33" destination="cph-78-x6F" id="wUd-F3-7V2"/>
                         <outlet property="button34" destination="KEU-qV-FDH" id="xOZ-7b-xOv"/>
                         <outlet property="button35" destination="OOK-SN-sd5" id="L6c-cL-mQF"/>
+                        <outlet property="iOSDC2020TextView" destination="33f-sa-1XJ" id="8gR-X8-Taa"/>
                         <outlet property="label01" destination="ahQ-K3-5Ly" id="ARq-3q-uYt"/>
                         <outlet property="label02" destination="unp-i3-9f9" id="FPJ-Vf-KjM"/>
                         <outlet property="label03" destination="B0F-1n-Fko" id="wi1-iA-xKI"/>
@@ -294,16 +243,6 @@
                         <outlet property="label10" destination="M9z-GI-y3Y" id="wJf-ST-6QI"/>
                         <outlet property="label20" destination="EKk-fc-aMF" id="AAH-EK-EmQ"/>
                         <outlet property="label30" destination="T8Z-Ev-QE5" id="gIs-tN-nik"/>
-                        <outlet property="smallButton0" destination="4ej-Ht-mvc" id="grC-1X-e04"/>
-                        <outlet property="smallButton1" destination="tCS-MK-e5i" id="nNS-WE-1sO"/>
-                        <outlet property="smallButton2" destination="RuI-ea-Zgr" id="uHb-JV-lYN"/>
-                        <outlet property="smallButton3" destination="wp3-Lc-5M5" id="q9P-cD-pJ6"/>
-                        <outlet property="smallButton4" destination="Mh9-ao-PNb" id="zSl-pA-kcH"/>
-                        <outlet property="smallButton5" destination="4wE-Io-LBX" id="eAv-Wt-kgX"/>
-                        <outlet property="smallButton6" destination="yJH-wK-jcp" id="TLi-eS-qe5"/>
-                        <outlet property="smallButton7" destination="G92-sz-BqY" id="66U-fp-rHi"/>
-                        <outlet property="smallButton8" destination="jLn-N2-TZx" id="bWS-mi-ABZ"/>
-                        <outlet property="smallButton9" destination="2d6-A9-f3c" id="fVK-Qm-l68"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -324,10 +263,65 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xlz-WP-YsQ">
+                                <rect key="frame" x="264" y="80" width="666" height="55"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SP-IJ-pia">
+                                        <rect key="frame" x="0.0" y="0.0" width="56" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <state key="normal" title="Tap"/>
+                                        <connections>
+                                            <action selector="selectTapWithDidTouchUpInside:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="bQp-QF-aBR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeV-Sb-ks2">
+                                        <rect key="frame" x="72" y="0.0" width="163" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <state key="normal" title="LongPress"/>
+                                        <connections>
+                                            <action selector="selectLongPressWithDidTouchUpInside:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="UVq-DL-kcl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNC-I8-p6c">
+                                        <rect key="frame" x="251" y="0.0" width="58" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <state key="normal" title="Pan"/>
+                                        <connections>
+                                            <action selector="selectPanWithDidTouchUpInside:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="O2N-wZ-ToX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2i-PH-g7L">
+                                        <rect key="frame" x="325" y="0.0" width="129" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <state key="normal" title="Rotation"/>
+                                        <connections>
+                                            <action selector="selectRotationWithDidTouchUpInside:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="K2B-aZ-kN3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="be4-hX-gE3">
+                                        <rect key="frame" x="470" y="0.0" width="87" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <state key="normal" title="Pinch"/>
+                                        <connections>
+                                            <action selector="selectPinchWithDidTouchUpInside:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="llt-O6-BV3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLb-LS-Lq4">
+                                        <rect key="frame" x="573" y="0.0" width="93" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <state key="normal" title="Hover"/>
+                                        <connections>
+                                            <action selector="selectHoverWithDidTouchUpInside:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="E9w-EH-hde"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="xlz-WP-YsQ" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="7Hn-IQ-uAT"/>
                             <constraint firstItem="icd-cO-gWd" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="Hs4-K1-Uw1"/>
+                            <constraint firstItem="xlz-WP-YsQ" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="80" id="Rge-2J-JrA"/>
                             <constraint firstItem="icd-cO-gWd" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="80" id="Wv6-u9-aOA"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="icd-cO-gWd" secondAttribute="trailing" constant="80" id="hXQ-D6-VOh"/>
                         </constraints>

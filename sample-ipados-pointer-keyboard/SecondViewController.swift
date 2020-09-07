@@ -18,6 +18,12 @@ class SecondViewController: UIViewController {
     private let pinchGestureRecognizer = UIPinchGestureRecognizer()
     private let rotationGestureRecognizer = UIRotationGestureRecognizer()
     private let hoverGestureRecognizer = UIHoverGestureRecognizer()
+    private var gestureRecognizers: [UIGestureRecognizer] {
+        return [
+            tapGestureRecognizer, longPressGestureRecognizer, panGestureRecognizer,
+            pinchGestureRecognizer, rotationGestureRecognizer, hoverGestureRecognizer
+        ]
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +34,8 @@ class SecondViewController: UIViewController {
         rotationGestureRecognizer.addTarget(self, action: #selector(rotation(gestureRecognizer:)))
         hoverGestureRecognizer.addTarget(self, action: #selector(hover(gestureRecognizer:)))
 
-        view.addGestureRecognizer(tapGestureRecognizer)
-        view.addGestureRecognizer(longPressGestureRecognizer)
-        view.addGestureRecognizer(panGestureRecognizer)
-        view.addGestureRecognizer(pinchGestureRecognizer)
-        view.addGestureRecognizer(rotationGestureRecognizer)
-        view.addGestureRecognizer(hoverGestureRecognizer)
+        gestureRecognizers.forEach { view.addGestureRecognizer($0) }
+        gestureRecognizers.forEach { $0.isEnabled = false }
 
         tapGestureRecognizer.buttonMaskRequired = .secondary
         longPressGestureRecognizer.numberOfTouchesRequired = 1
@@ -41,6 +43,40 @@ class SecondViewController: UIViewController {
         panGestureRecognizer.allowedScrollTypesMask = .continuous
 
         label.text = "none"
+    }
+
+}
+
+extension SecondViewController {
+
+    @IBAction func selectTap(didTouchUpInside sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        tapGestureRecognizer.isEnabled = sender.isSelected
+    }
+
+    @IBAction func selectLongPress(didTouchUpInside sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        longPressGestureRecognizer.isEnabled = sender.isSelected
+    }
+
+    @IBAction func selectPan(didTouchUpInside sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        panGestureRecognizer.isEnabled = sender.isSelected
+    }
+
+    @IBAction func selectRotation(didTouchUpInside sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        rotationGestureRecognizer.isEnabled = sender.isSelected
+    }
+
+    @IBAction func selectPinch(didTouchUpInside sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        pinchGestureRecognizer.isEnabled = sender.isSelected
+    }
+
+    @IBAction func selectHover(didTouchUpInside sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        hoverGestureRecognizer.isEnabled = sender.isSelected
     }
 
 }

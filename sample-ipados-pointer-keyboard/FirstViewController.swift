@@ -40,22 +40,7 @@ class FirstViewController: UIViewController {
             button31, button32, button33, button34, button35
         ]
     }
-    @IBOutlet private weak var smallButton0: UIButton!
-    @IBOutlet private weak var smallButton1: UIButton!
-    @IBOutlet private weak var smallButton2: UIButton!
-    @IBOutlet private weak var smallButton3: UIButton!
-    @IBOutlet private weak var smallButton4: UIButton!
-    @IBOutlet private weak var smallButton5: UIButton!
-    @IBOutlet private weak var smallButton6: UIButton!
-    @IBOutlet private weak var smallButton7: UIButton!
-    @IBOutlet private weak var smallButton8: UIButton!
-    @IBOutlet private weak var smallButton9: UIButton!
-    private var smallButtons: [UIButton] {
-        return [
-            smallButton0, smallButton1, smallButton2, smallButton3, smallButton4,
-            smallButton5, smallButton6, smallButton7, smallButton8, smallButton9
-        ]
-    }
+    @IBOutlet private weak var iOSDC2020TextView: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,27 +93,40 @@ class FirstViewController: UIViewController {
             button.isPointerInteractionEnabled = true // pointerStyleProviderを設定するとtrueになる
         }
 
-        guard let font = CTFontCreateUIFontForLanguage(.system, 36, nil) else {
-            return
+        iOSDC2020TextView.tintColor = .blue
+        iOSDC2020TextView.textColor = .placeholderText
+        iOSDC2020TextView.textContainerInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        iOSDC2020TextView.textContainer.lineFragmentPadding = .zero
+        iOSDC2020TextView.isEditable = false
+        iOSDC2020TextView.isSelectable = false
+        iOSDC2020TextView.addInteraction(UIPointerInteraction(delegate: self))
+    }
+
+}
+
+extension FirstViewController: UIPointerInteractionDelegate {
+
+    func pointerInteraction(_ interaction: UIPointerInteraction, regionFor request: UIPointerRegionRequest, defaultRegion: UIPointerRegion) -> UIPointerRegion? {
+        guard let range = iOSDC2020TextView.characterRange(at: request.location), let text = iOSDC2020TextView.text(in: range), text != " " else {
+            return nil
+        }
+        return UIPointerRegion(rect: iOSDC2020TextView.firstRect(for: range), identifier: text)
+    }
+
+    func pointerInteraction(_ interaction: UIPointerInteraction, styleFor region: UIPointerRegion) -> UIPointerStyle? {
+        guard let text = region.identifier as? String, let font = CTFontCreateUIFontForLanguage(.system, 36, nil) else {
+            return nil
         }
         let ascender = CTFontGetAscent(font)
-        smallButtons.forEach { button in
-            button.isPointerInteractionEnabled = true
-            guard let currentTitle = button.currentTitle, !currentTitle.isEmpty else {
-                return
-            }
-            // PostScript
-            let name = currentTitle == "2" ? "two" : currentTitle == "0" ? "zero" : currentTitle
-            button.pointerStyleProvider = { _, _, _ in
-                var glyph = CTFontGetGlyphWithName(font, name as CFString)
-                let advance = CTFontGetAdvancesForGlyphs(font, .horizontal, &glyph, nil, 1)
-                var transform = CGAffineTransform(scaleX: 1, y: -1).translatedBy(x: -CGFloat(advance) / 2, y: 18 - ascender)
-                guard let path = CTFontCreatePathForGlyph(font, glyph, &transform) else {
-                    return nil
-                }
-                return UIPointerStyle(shape: UIPointerShape.path(UIBezierPath(cgPath: path)))
-            }
+        // PostScript
+        let name = text == "2" ? "two" : text == "0" ? "zero" : text
+        var glyph = CTFontGetGlyphWithName(font, name as CFString)
+        let advance = CTFontGetAdvancesForGlyphs(font, .horizontal, &glyph, nil, 1)
+        var transform = CGAffineTransform(scaleX: 1, y: -1).translatedBy(x: -CGFloat(advance) / 2, y: 18 - ascender)
+        guard let path = CTFontCreatePathForGlyph(font, glyph, &transform) else {
+            return nil
         }
+        return UIPointerStyle(shape: UIPointerShape.path(UIBezierPath(cgPath: path)), constrainedAxes: .horizontal)
     }
 
 }

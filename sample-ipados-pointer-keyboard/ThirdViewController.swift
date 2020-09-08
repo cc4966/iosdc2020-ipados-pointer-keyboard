@@ -51,6 +51,38 @@ class ThirdViewController: UIViewController {
         addKeyCommand(UIKeyCommand(title: "Command+Shift+F", image: .add, action: #selector(handleKeyCommand(command:)), input: "F", modifierFlags: .init(arrayLiteral: .command, .shift), propertyList: nil, alternates: [], discoverabilityTitle: "addKeyCommand"))
     }
 
+    private var keys: Set<UIKeyboardHIDUsage> = []
+
+    override func pressesBegan(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
+        presses.compactMap { $0.key }.forEach {
+            keys.insert($0.keyCode)
+        }
+        label.text = keys.map { String($0.rawValue) }.joined(separator: "\n")
+        super.pressesBegan(presses, with: event)
+    }
+
+    override func pressesChanged(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
+        print(presses.first?.key as Any)
+        print(presses.count)
+        super.pressesChanged(presses, with: event)
+    }
+
+    override func pressesEnded(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
+        presses.compactMap { $0.key }.forEach {
+            keys.remove($0.keyCode)
+        }
+        label.text = keys.map { String($0.rawValue) }.joined(separator: "\n")
+        super.pressesEnded(presses, with: event)
+    }
+
+    override func pressesCancelled(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
+        presses.compactMap { $0.key }.forEach {
+            keys.remove($0.keyCode)
+        }
+        label.text = keys.map { String($0.rawValue) }.joined(separator: "\n")
+        super.pressesCancelled(presses, with: event)
+    }
+
 }
 
 extension ThirdViewController {

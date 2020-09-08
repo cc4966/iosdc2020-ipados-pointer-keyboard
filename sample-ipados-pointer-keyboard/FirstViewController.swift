@@ -136,7 +136,7 @@ extension FirstViewController {
     @IBAction func changeButtonBackground(didTOuchUpInside sender: UIButton) {
         sender.isSelected = !sender.isSelected
         buttons.forEach { button in
-            button.backgroundColor = sender.isSelected ? .lightGray : nil
+            button.backgroundColor = sender.isSelected ? [UIColor.lightGray, UIColor.darkGray].randomElement() : nil
         }
     }
 

@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--ポインター-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="sample_ipados_pointer_keyboard" customModuleProvider="target" sceneMemberID="viewController">
@@ -217,7 +217,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="ポインター" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="button11" destination="XSs-tE-GvH" id="mVh-Hp-Moh"/>
                         <outlet property="button12" destination="WFr-te-VoM" id="ed3-n5-rAt"/>
@@ -249,7 +249,7 @@
             </objects>
             <point key="canvasLocation" x="749.748743718593" y="-320.14388489208636"/>
         </scene>
-        <!--Second-->
+        <!--ジェスチャー-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="sample_ipados_pointer_keyboard" customModuleProvider="target" sceneMemberID="viewController">
@@ -327,7 +327,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="ジェスチャー" image="second" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="label" destination="icd-cO-gWd" id="J8m-Dn-A7T"/>
                     </connections>
@@ -348,11 +348,91 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="UNa-yD-uso" kind="relationship" relationship="viewControllers" id="7Uc-pj-kZB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--ショートカット-->
+        <scene sceneID="iPu-cF-uw1">
+            <objects>
+                <viewController title="ショートカット" id="UNa-yD-uso" customClass="ThirdViewController" customModule="sample_ipados_pointer_keyboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bhz-RX-D8G">
+                        <rect key="frame" x="0.0" y="0.0" width="1194" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" text="Label" lineBreakMode="wordWrap" numberOfLines="0" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="h8A-ym-7nB">
+                                <rect key="frame" x="80" y="395.5" width="1034" height="43"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="GmT-EU-dpi">
+                                <rect key="frame" x="179" y="80" width="836" height="55"/>
+                                <subviews>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQO-XC-Tuy">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <state key="normal" title="A"/>
+                                    </button>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avm-ue-LTE">
+                                        <rect key="frame" x="46" y="0.0" width="207" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <state key="normal" title="Command+A"/>
+                                    </button>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtQ-Fj-TuO">
+                                        <rect key="frame" x="269" y="0.0" width="301" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <state key="normal" title="Command+Shift+A"/>
+                                    </button>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNj-ed-gwL">
+                                        <rect key="frame" x="586" y="0.0" width="162" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <state key="normal" title="Command"/>
+                                    </button>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSn-5n-FP6">
+                                        <rect key="frame" x="764" y="0.0" width="72" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <state key="normal" title="Shift"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GBz-xW-IyO">
+                                <rect key="frame" x="477" y="400" width="240" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="55F-Wy-HGb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GmT-EU-dpi" firstAttribute="top" secondItem="AaE-j1-dOh" secondAttribute="top" constant="80" id="7Jz-nw-Q4R"/>
+                            <constraint firstItem="GBz-xW-IyO" firstAttribute="centerX" secondItem="bhz-RX-D8G" secondAttribute="centerX" id="AL0-vc-rxm"/>
+                            <constraint firstItem="h8A-ym-7nB" firstAttribute="leading" secondItem="AaE-j1-dOh" secondAttribute="leading" constant="80" id="aba-sS-rXI"/>
+                            <constraint firstItem="GmT-EU-dpi" firstAttribute="centerX" secondItem="bhz-RX-D8G" secondAttribute="centerX" id="aff-L8-KfI"/>
+                            <constraint firstItem="AaE-j1-dOh" firstAttribute="trailing" secondItem="h8A-ym-7nB" secondAttribute="trailing" constant="80" id="ovC-ud-YpS"/>
+                            <constraint firstItem="h8A-ym-7nB" firstAttribute="centerY" secondItem="bhz-RX-D8G" secondAttribute="centerY" id="vET-sw-8pg"/>
+                            <constraint firstItem="GBz-xW-IyO" firstAttribute="centerY" secondItem="bhz-RX-D8G" secondAttribute="centerY" id="vjN-6y-nIm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AaE-j1-dOh"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="ジェスチャー" image="second" id="YjJ-Gg-USW"/>
+                    <connections>
+                        <outlet property="aButton" destination="VQO-XC-Tuy" id="OHQ-si-DfC"/>
+                        <outlet property="aCommandButton" destination="avm-ue-LTE" id="P8p-MH-P73"/>
+                        <outlet property="aCommandShiftButton" destination="vtQ-Fj-TuO" id="QZk-f8-cyL"/>
+                        <outlet property="commandButton" destination="eNj-ed-gwL" id="ODS-4s-GHC"/>
+                        <outlet property="label" destination="h8A-ym-7nB" id="s19-6R-Csa"/>
+                        <outlet property="shiftButton" destination="bSn-5n-FP6" id="dW3-bN-O1y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WIi-qT-pwo" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="1070"/>
         </scene>
     </scenes>
     <resources>

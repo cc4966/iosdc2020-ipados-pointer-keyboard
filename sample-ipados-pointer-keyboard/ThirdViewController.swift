@@ -57,7 +57,7 @@ class ThirdViewController: UIViewController {
         presses.compactMap { $0.key }.forEach {
             keys.insert($0.keyCode)
         }
-        label.text = keys.map { String($0.rawValue) }.joined(separator: "\n")
+        updateLabel()
         super.pressesBegan(presses, with: event)
     }
 
@@ -71,7 +71,7 @@ class ThirdViewController: UIViewController {
         presses.compactMap { $0.key }.forEach {
             keys.remove($0.keyCode)
         }
-        label.text = keys.map { String($0.rawValue) }.joined(separator: "\n")
+        updateLabel()
         super.pressesEnded(presses, with: event)
     }
 
@@ -79,8 +79,12 @@ class ThirdViewController: UIViewController {
         presses.compactMap { $0.key }.forEach {
             keys.remove($0.keyCode)
         }
-        label.text = keys.map { String($0.rawValue) }.joined(separator: "\n")
+        updateLabel()
         super.pressesCancelled(presses, with: event)
+    }
+
+    private func updateLabel() {
+        label.text = keys.map { String($0.rawValue) + ":\t" + $0.readableKey }.joined(separator: "\n")
     }
 
 }

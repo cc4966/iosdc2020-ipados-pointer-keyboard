@@ -57,7 +57,7 @@ class SecondViewController: UIViewController {
         hoverGestureRecognizer.allowedTouchTypes = [UITouch.TouchType.indirectPointer.rawValue] as [NSNumber]
 
         gestureRecognizers.forEach { view.addGestureRecognizer($0) }
-        gestureRecognizers.forEach { $0.isEnabled = false }
+        gestureRecognizers.forEach { $0.isEnabled = true }
 
         label.text = "none"
     }

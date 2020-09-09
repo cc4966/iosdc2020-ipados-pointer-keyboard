@@ -34,13 +34,30 @@ class SecondViewController: UIViewController {
         rotationGestureRecognizer.addTarget(self, action: #selector(rotation(gestureRecognizer:)))
         hoverGestureRecognizer.addTarget(self, action: #selector(hover(gestureRecognizer:)))
 
+        tapGestureRecognizer.numberOfTouchesRequired = 1
+        tapGestureRecognizer.numberOfTapsRequired = 1
+        tapGestureRecognizer.buttonMaskRequired = .init(arrayLiteral: .primary, .secondary)
+        tapGestureRecognizer.allowedTouchTypes = [UITouch.TouchType.indirectPointer.rawValue] as [NSNumber]
+
+        longPressGestureRecognizer.minimumPressDuration = 0.3
+        longPressGestureRecognizer.allowableMovement = 1
+        longPressGestureRecognizer.numberOfTouchesRequired = 1
+        longPressGestureRecognizer.numberOfTapsRequired = 2
+        longPressGestureRecognizer.allowedTouchTypes = [UITouch.TouchType.indirectPointer.rawValue] as [NSNumber]
+
+        panGestureRecognizer.allowedScrollTypesMask = .all
+        panGestureRecognizer.minimumNumberOfTouches = 2
+        panGestureRecognizer.maximumNumberOfTouches = 2
+        panGestureRecognizer.allowedTouchTypes = [UITouch.TouchType.indirectPointer.rawValue] as [NSNumber]
+
+        pinchGestureRecognizer.allowedTouchTypes = [UITouch.TouchType.indirectPointer.rawValue] as [NSNumber]
+
+        rotationGestureRecognizer.allowedTouchTypes = [UITouch.TouchType.indirectPointer.rawValue] as [NSNumber]
+
+        hoverGestureRecognizer.allowedTouchTypes = [UITouch.TouchType.indirectPointer.rawValue] as [NSNumber]
+
         gestureRecognizers.forEach { view.addGestureRecognizer($0) }
         gestureRecognizers.forEach { $0.isEnabled = false }
-
-        tapGestureRecognizer.buttonMaskRequired = .secondary
-        longPressGestureRecognizer.numberOfTouchesRequired = 1
-        panGestureRecognizer.allowedTouchTypes = [UITouch.TouchType.indirectPointer.rawValue] as [NSNumber]
-        panGestureRecognizer.allowedScrollTypesMask = .continuous
 
         label.text = "none"
     }
@@ -89,8 +106,9 @@ extension SecondViewController {
             label.text = [
                 "tap: \(gestureRecognizer.location(in: view))",
                 "buttonMask: \(gestureRecognizer.buttonMask)",
-                "numberOfTouches: \(gestureRecognizer.numberOfTouches) | \(locations)",
-                ""
+                "",
+                "numberOfTouches: \(gestureRecognizer.numberOfTouches)",
+                "\(locations)",
             ].joined(separator: "\n")
         }
     }
@@ -101,8 +119,9 @@ extension SecondViewController {
             label.text = [
                 "longPress: \(gestureRecognizer.location(in: view))",
                 "buttonMask: \(gestureRecognizer.buttonMask)",
-                "numberOfTouches: \(gestureRecognizer.numberOfTouches) | \(locations)",
-                ""
+                "",
+                "numberOfTouches: \(gestureRecognizer.numberOfTouches)",
+                "\(locations)",
             ].joined(separator: "\n")
         }
     }
@@ -113,8 +132,9 @@ extension SecondViewController {
             label.text = [
                 "pan: \(gestureRecognizer.location(in: view))",
                 "buttonMask: \(gestureRecognizer.buttonMask)",
-                "numberOfTouches: \(gestureRecognizer.numberOfTouches) | \(locations)",
-                "translation: \(gestureRecognizer.translation(in: view))"
+                "translation: \(gestureRecognizer.translation(in: view))",
+                "numberOfTouches: \(gestureRecognizer.numberOfTouches)",
+                "\(locations)",
             ].joined(separator: "\n")
         }
     }
@@ -125,8 +145,9 @@ extension SecondViewController {
             label.text = [
                 "rotation: \(gestureRecognizer.location(in: view))",
                 "buttonMask: \(gestureRecognizer.buttonMask)",
-                "numberOfTouches: \(gestureRecognizer.numberOfTouches) | \(locations)",
-                "rotation: \(gestureRecognizer.rotation)"
+                "rotation: \(gestureRecognizer.rotation)",
+                "numberOfTouches: \(gestureRecognizer.numberOfTouches)",
+                "\(locations)",
             ].joined(separator: "\n")
         }
     }
@@ -137,8 +158,9 @@ extension SecondViewController {
             label.text = [
                 "pinch: \(gestureRecognizer.location(in: view))",
                 "buttonMask: \(gestureRecognizer.buttonMask)",
-                "numberOfTouches: \(gestureRecognizer.numberOfTouches) | \(locations)",
-                "scale: \(gestureRecognizer.scale)"
+                "scale: \(gestureRecognizer.scale)",
+                "numberOfTouches: \(gestureRecognizer.numberOfTouches)",
+                "\(locations)",
             ].joined(separator: "\n")
         }
     }
@@ -149,8 +171,9 @@ extension SecondViewController {
             label.text = [
                 "hover: \(gestureRecognizer.location(in: view))",
                 "buttonMask: \(gestureRecognizer.buttonMask)",
-                "numberOfTouches: \(gestureRecognizer.numberOfTouches) | \(locations)",
-                ""
+                "",
+                "numberOfTouches: \(gestureRecognizer.numberOfTouches)",
+                "\(locations)",
             ].joined(separator: "\n")
         }
     }

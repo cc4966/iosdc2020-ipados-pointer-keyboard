@@ -16,6 +16,8 @@
 		B2A00E7A25067CDB00DC7A31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2A00E7825067CDB00DC7A31 /* LaunchScreen.storyboard */; };
 		B2CA591D250740C8006296E1 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CA591C250740C8006296E1 /* ThirdViewController.swift */; };
 		B2CA5921250894C5006296E1 /* UIKeyboardHIDUsage+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CA5920250894C5006296E1 /* UIKeyboardHIDUsage+String.swift */; };
+		B2CA59232509426B006296E1 /* InteractionSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CA59222509426B006296E1 /* InteractionSampleViewController.swift */; };
+		B2CA5925250942E9006296E1 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CA5924250942E9006296E1 /* PreviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		B2A00E7B25067CDB00DC7A31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2CA591C250740C8006296E1 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		B2CA5920250894C5006296E1 /* UIKeyboardHIDUsage+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKeyboardHIDUsage+String.swift"; sourceTree = "<group>"; };
+		B2CA59222509426B006296E1 /* InteractionSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionSampleViewController.swift; sourceTree = "<group>"; };
+		B2CA5924250942E9006296E1 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				B2A00E7825067CDB00DC7A31 /* LaunchScreen.storyboard */,
 				B2A00E7B25067CDB00DC7A31 /* Info.plist */,
 				B2CA5920250894C5006296E1 /* UIKeyboardHIDUsage+String.swift */,
+				B2CA59222509426B006296E1 /* InteractionSampleViewController.swift */,
+				B2CA5924250942E9006296E1 /* PreviewViewController.swift */,
 			);
 			path = "sample-ipados-pointer-keyboard";
 			sourceTree = "<group>";
@@ -147,12 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2CA59232509426B006296E1 /* InteractionSampleViewController.swift in Sources */,
 				B2A00E7225067CD900DC7A31 /* SecondViewController.swift in Sources */,
 				B2CA5921250894C5006296E1 /* UIKeyboardHIDUsage+String.swift in Sources */,
 				B2A00E7025067CD900DC7A31 /* FirstViewController.swift in Sources */,
 				B2CA591D250740C8006296E1 /* ThirdViewController.swift in Sources */,
 				B2A00E6C25067CD900DC7A31 /* AppDelegate.swift in Sources */,
 				B2A00E6E25067CD900DC7A31 /* SceneDelegate.swift in Sources */,
+				B2CA5925250942E9006296E1 /* PreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

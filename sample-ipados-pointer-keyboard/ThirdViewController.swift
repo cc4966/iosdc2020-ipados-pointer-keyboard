@@ -39,7 +39,7 @@ class ThirdViewController: UIViewController {
         label.accessibilityRespondsToUserInteraction = true
         label.tintColor = .red
 
-        let containerView = UIView(frame: CGRect(x: 80, y: 80, width: 240, height: 80))
+        let containerView = UIView(frame: CGRect(x: 160, y: 160, width: 240, height: 80))
         containerView.tintColor = .green
         let focusableLabel = FocusableLabel(frame: CGRect(x: 0, y: 0, width: 240, height: 80))
         focusableLabel.text = "focusableLabel"
@@ -90,6 +90,13 @@ class ThirdViewController: UIViewController {
 }
 
 extension ThirdViewController {
+
+    @IBAction func openFullKeyboardAccess(didTouchUpInside sender: UIButton) {
+        guard let url = URL(string: UIApplication.openSettingsURLString) else {
+            return
+        }
+        UIApplication.shared.open(url)
+    }
 
     @objc func handleKeyCommand(command: UIKeyCommand) {
         print(command)

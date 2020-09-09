@@ -190,9 +190,9 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ese-yy-QFL">
-                                <rect key="frame" x="488" y="84" width="218" height="55"/>
+                                <rect key="frame" x="415.5" y="84" width="363" height="55"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <state key="normal" title="背景色を設定"/>
+                                <state key="normal" title="ボタンに背景色を設定"/>
                                 <state key="selected" title="背景色を解除"/>
                                 <connections>
                                     <action selector="changeButtonBackgroundWithDidTOuchUpInside:" destination="9pv-A4-QxB" eventType="touchUpInside" id="hH0-Zs-eue"/>
@@ -217,7 +217,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ポインター" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="ポインター" image="cursor.rays" catalog="system" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="button11" destination="XSs-tE-GvH" id="mVh-Hp-Moh"/>
                         <outlet property="button12" destination="WFr-te-VoM" id="ed3-n5-rAt"/>
@@ -327,7 +327,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ジェスチャー" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="ジェスチャー" image="hand.draw" catalog="system" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="label" destination="icd-cO-gWd" id="J8m-Dn-A7T"/>
                     </connections>
@@ -400,13 +400,20 @@
                                 </subviews>
                             </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GBz-xW-IyO">
-                                <rect key="frame" x="477" y="400" width="240" height="34"/>
+                                <rect key="frame" x="477" y="215" width="240" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="55F-Wy-HGb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93f-Hb-uPO">
+                                <rect key="frame" x="1037" y="659" width="77" height="30"/>
+                                <state key="normal" title="設定アプリ"/>
+                                <connections>
+                                    <action selector="openFullKeyboardAccessWithDidTouchUpInside:" destination="UNa-yD-uso" eventType="touchUpInside" id="F97-6q-1MW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -414,13 +421,15 @@
                             <constraint firstItem="GBz-xW-IyO" firstAttribute="centerX" secondItem="bhz-RX-D8G" secondAttribute="centerX" id="AL0-vc-rxm"/>
                             <constraint firstItem="h8A-ym-7nB" firstAttribute="leading" secondItem="AaE-j1-dOh" secondAttribute="leading" constant="80" id="aba-sS-rXI"/>
                             <constraint firstItem="GmT-EU-dpi" firstAttribute="centerX" secondItem="bhz-RX-D8G" secondAttribute="centerX" id="aff-L8-KfI"/>
+                            <constraint firstItem="AaE-j1-dOh" firstAttribute="trailing" secondItem="93f-Hb-uPO" secondAttribute="trailing" constant="80" id="ghw-Lr-JCE"/>
+                            <constraint firstItem="AaE-j1-dOh" firstAttribute="bottom" secondItem="93f-Hb-uPO" secondAttribute="bottom" constant="80" id="kgy-aU-TRJ"/>
                             <constraint firstItem="AaE-j1-dOh" firstAttribute="trailing" secondItem="h8A-ym-7nB" secondAttribute="trailing" constant="80" id="ovC-ud-YpS"/>
                             <constraint firstItem="h8A-ym-7nB" firstAttribute="centerY" secondItem="bhz-RX-D8G" secondAttribute="centerY" id="vET-sw-8pg"/>
-                            <constraint firstItem="GBz-xW-IyO" firstAttribute="centerY" secondItem="bhz-RX-D8G" secondAttribute="centerY" id="vjN-6y-nIm"/>
+                            <constraint firstItem="GBz-xW-IyO" firstAttribute="top" secondItem="GmT-EU-dpi" secondAttribute="bottom" constant="80" id="yGF-SY-3cs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AaE-j1-dOh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ジェスチャー" image="second" id="YjJ-Gg-USW"/>
+                    <tabBarItem key="tabBarItem" title="ショートカット" image="command" catalog="system" id="YjJ-Gg-USW"/>
                     <connections>
                         <outlet property="aButton" destination="VQO-XC-Tuy" id="OHQ-si-DfC"/>
                         <outlet property="aCommandButton" destination="avm-ue-LTE" id="P8p-MH-P73"/>
@@ -436,7 +445,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="command" catalog="system" width="128" height="115"/>
+        <image name="cursor.rays" catalog="system" width="128" height="119"/>
+        <image name="hand.draw" catalog="system" width="128" height="108"/>
     </resources>
 </document>

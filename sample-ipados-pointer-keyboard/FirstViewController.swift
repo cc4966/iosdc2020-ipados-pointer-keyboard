@@ -51,7 +51,6 @@ class FirstViewController: UIViewController {
                 return UIPointerStyle(effect: .hover(UITargetedPreview(view: button)))
             }
         }
-        label02.font = .systemFont(ofSize: 24)
         label02.text = "highlight"
         [button12, button22, button32].forEach { button in
             guard let button = button else { return }
@@ -59,7 +58,6 @@ class FirstViewController: UIViewController {
                 return UIPointerStyle(effect: .highlight(UITargetedPreview(view: button)))
             }
         }
-        label03.font = .systemFont(ofSize: 24)
         label03.text = "automatic"
         [button13, button23, button33].forEach { button in
             guard let button = button else { return }
@@ -74,7 +72,6 @@ class FirstViewController: UIViewController {
                 return UIPointerStyle(effect: .lift(UITargetedPreview(view: button)))
             }
         }
-        label05.font = .systemFont(ofSize: 30)
         label05.text = "default"
 
         label10.text = "false"

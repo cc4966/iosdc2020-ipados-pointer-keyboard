@@ -11,6 +11,12 @@ import UIKit
 class SecondViewController: UIViewController {
 
     @IBOutlet private weak var label: UILabel!
+    @IBOutlet private weak var alphaShiftButton: UIButton!
+    @IBOutlet private weak var alternateButton: UIButton!
+    @IBOutlet private weak var commandButton: UIButton!
+    @IBOutlet private weak var controlButton: UIButton!
+    @IBOutlet private weak var numericPadButton: UIButton!
+    @IBOutlet private weak var shiftButton: UIButton!
 
     private let tapGestureRecognizer = UITapGestureRecognizer()
     private let longPressGestureRecognizer = UILongPressGestureRecognizer()
@@ -39,15 +45,15 @@ class SecondViewController: UIViewController {
         tapGestureRecognizer.buttonMaskRequired = .init(arrayLiteral: .primary, .secondary)
         tapGestureRecognizer.allowedTouchTypes = [UITouch.TouchType.indirectPointer.rawValue] as [NSNumber]
 
-        longPressGestureRecognizer.minimumPressDuration = 0.3
-        longPressGestureRecognizer.allowableMovement = 1
+        longPressGestureRecognizer.minimumPressDuration = 0.5
+        longPressGestureRecognizer.allowableMovement = 10
         longPressGestureRecognizer.numberOfTouchesRequired = 1
-        longPressGestureRecognizer.numberOfTapsRequired = 2
+        longPressGestureRecognizer.numberOfTapsRequired = 1
         longPressGestureRecognizer.allowedTouchTypes = [UITouch.TouchType.indirectPointer.rawValue] as [NSNumber]
 
         panGestureRecognizer.allowedScrollTypesMask = .all
-        panGestureRecognizer.minimumNumberOfTouches = 2
-        panGestureRecognizer.maximumNumberOfTouches = 2
+        panGestureRecognizer.minimumNumberOfTouches = 1
+        panGestureRecognizer.maximumNumberOfTouches = 1
         panGestureRecognizer.allowedTouchTypes = [UITouch.TouchType.indirectPointer.rawValue] as [NSNumber]
 
         pinchGestureRecognizer.allowedTouchTypes = [UITouch.TouchType.indirectPointer.rawValue] as [NSNumber]
@@ -100,6 +106,15 @@ extension SecondViewController {
 
 extension SecondViewController {
 
+    private func updateModifierFlags(gestureRecognizer: UIGestureRecognizer) {
+        alphaShiftButton.isSelected = gestureRecognizer.modifierFlags.contains(.alphaShift)
+        alternateButton.isSelected = gestureRecognizer.modifierFlags.contains(.alternate)
+        commandButton.isSelected = gestureRecognizer.modifierFlags.contains(.command)
+        controlButton.isSelected = gestureRecognizer.modifierFlags.contains(.control)
+        numericPadButton.isSelected = gestureRecognizer.modifierFlags.contains(.numericPad)
+        shiftButton.isSelected = gestureRecognizer.modifierFlags.contains(.shift)
+    }
+
     @objc func tap(gestureRecognizer: UITapGestureRecognizer) {
         if gestureRecognizer.state == .ended || gestureRecognizer.state == .began || gestureRecognizer.state == .changed {
             let locations = (0..<gestureRecognizer.numberOfTouches).map { gestureRecognizer.location(ofTouch: $0, in: view) }
@@ -111,6 +126,12 @@ extension SecondViewController {
                 "\(locations)",
             ].joined(separator: "\n")
         }
+        if gestureRecognizer.state == .ended {
+            label.textColor = .placeholderText
+        } else {
+            label.textColor = .darkText
+        }
+        updateModifierFlags(gestureRecognizer: gestureRecognizer)
     }
 
     @objc func longPress(gestureRecognizer: UILongPressGestureRecognizer) {
@@ -124,6 +145,12 @@ extension SecondViewController {
                 "\(locations)",
             ].joined(separator: "\n")
         }
+        if gestureRecognizer.state == .ended {
+            label.textColor = .placeholderText
+        } else {
+            label.textColor = .darkText
+        }
+        updateModifierFlags(gestureRecognizer: gestureRecognizer)
     }
 
     @objc func pan(gestureRecognizer: UIPanGestureRecognizer) {
@@ -137,6 +164,12 @@ extension SecondViewController {
                 "\(locations)",
             ].joined(separator: "\n")
         }
+        if gestureRecognizer.state == .ended {
+            label.textColor = .placeholderText
+        } else {
+            label.textColor = .darkText
+        }
+        updateModifierFlags(gestureRecognizer: gestureRecognizer)
     }
 
     @objc func rotation(gestureRecognizer: UIRotationGestureRecognizer) {
@@ -150,6 +183,12 @@ extension SecondViewController {
                 "\(locations)",
             ].joined(separator: "\n")
         }
+        if gestureRecognizer.state == .ended {
+            label.textColor = .placeholderText
+        } else {
+            label.textColor = .darkText
+        }
+        updateModifierFlags(gestureRecognizer: gestureRecognizer)
     }
 
     @objc func pinch(gestureRecognizer: UIPinchGestureRecognizer) {
@@ -163,6 +202,12 @@ extension SecondViewController {
                 "\(locations)",
             ].joined(separator: "\n")
         }
+        if gestureRecognizer.state == .ended {
+            label.textColor = .placeholderText
+        } else {
+            label.textColor = .darkText
+        }
+        updateModifierFlags(gestureRecognizer: gestureRecognizer)
     }
 
     @objc func hover(gestureRecognizer: UIHoverGestureRecognizer) {
@@ -176,6 +221,12 @@ extension SecondViewController {
                 "\(locations)",
             ].joined(separator: "\n")
         }
+        if gestureRecognizer.state == .ended {
+            label.textColor = .placeholderText
+        } else {
+            label.textColor = .darkText
+        }
+        updateModifierFlags(gestureRecognizer: gestureRecognizer)
     }
 
 }

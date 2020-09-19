@@ -3,3 +3,5 @@
 
 ## 発表資料
 Speaker Deck: https://speakerdeck.com/cc4966/ipados-app-using-pointer-and-keyboard
+
+PDF (各種リンク付き): https://github.com/cc4966/iosdc2020-ipados-pointer-keyboard/raw/master/presentaiton.pdf
